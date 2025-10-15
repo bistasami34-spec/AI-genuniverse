@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI-Verse | Generate Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <style>
+        body { text-align: center; background: #f5f7fa; padding-top: 50px; }
+        .logo { width: 100px; }
+        h1 { color: #333; }
+        form { max-width: 400px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="AI Brain Logo">
+    <h1>AI-Verse</h1>
+    <h4>Welcome, {{ email }}</h4>
+
+    <form action="/generate" method="POST">
+        <label for="topic">Enter a Topic</label>
+        <input type="text" id="topic" name="topic" placeholder="e.g. Machine Learning" required>
+
+        <label for="num_questions">Number of Questions</label>
+        <input type="number" id="num_questions" name="num_questions" value="20" min="1" max="20" required>
+
+        <label for="difficulty">Select Difficulty</label>
+        <select id="difficulty" name="difficulty" required>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="difficult">Difficult</option>
+            <option value="extremely difficult">Extremely Difficult</option>
+        </select>
+
+        <button type="submit" class="button-primary">Generate Quiz</button>
+    </form>
+</body>
+</html>
