@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI-Verse Login</title>
+    <style>
+        body { text-align: center; background: #f3f6fb; font-family: Arial; margin-top: 100px; }
+        img { width: 100px; }
+        h1 { color: #222; }
+        a { background: #4285F4; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+        a:hover { background: #3367D6; }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="AI Logo">
+    <h1>Welcome to AI-Verse</h1>
+    <p>Your AI-powered Quiz Generator</p>
+    <a href="{{ url_for('google.login') }}">Login with Google</a>
+</body>
+</html>
