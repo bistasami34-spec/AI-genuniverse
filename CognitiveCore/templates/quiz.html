@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ topic }} Quiz | AI-Verse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <style>
+        body { background: #f5f7fa; padding: 30px; }
+        .logo { width: 80px; display: block; margin: 0 auto; }
+        .quiz-card { background: white; padding: 15px; margin: 10px auto; border-radius: 10px; max-width: 600px; }
+        h1, h2 { text-align: center; }
+        a { display: block; text-align: center; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo" alt="AI Logo">
+    <h1>AI-Verse</h1>
+    <h2>{{ topic }} Quiz ({{ difficulty }})</h2>
+
+    {% for q in questions %}
+    <div class="quiz-card">
+        <p><strong>Q{{ loop.index }}:</strong> {{ q }}</p>
+    </div>
+    {% endfor %}
+
+    <a href="/">← Generate Another Quiz</a>
+</body>
+</html>
