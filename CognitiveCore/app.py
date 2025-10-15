@@ -8,8 +8,8 @@ app.secret_key = "super_secret_key_here"  # change this in real app!
 
 # ✅ Setup Google OAuth
 blueprint = make_google_blueprint(
-    client_secrets_file="client_secret.json",
-    redirect_url="http://localhost:5000/callback",
+    CLIENT_SECRET="client_secret.json",
+    REDIRECT_URL="http://localhost:5000/callback",
     scope=["profile", "email"],
 )
 app.register_blueprint(blueprint, url_prefix="/login")
@@ -74,4 +74,5 @@ def generate():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
 
